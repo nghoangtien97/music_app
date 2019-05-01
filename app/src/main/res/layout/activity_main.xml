@@ -4,7 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_main"
     tools:context=".MainActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/menu_option"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:layout_width="wrap_content"
