@@ -13,10 +13,18 @@
         layout="@layout/playing_title"/>
 
     <include
+        android:id="@+id/menu_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/menu_option"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include
+        android:id="@+id/playing_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/playing_control"
+        app:layout_constraintBottom_toTopOf="@id/menu_option"/>
 
     <TextView
         android:layout_width="wrap_content"

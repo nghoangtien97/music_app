@@ -4,11 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageButton
+    <ImageView
+        style="@style/playing_title_btn"
         android:id="@+id/btn_back"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_margin="@dimen/_10sdp"
         android:src="@drawable/btn_left"
         android:layout_alignParentStart="true"/>
     <LinearLayout
@@ -24,11 +22,9 @@
             style="@style/text_small_gray"
             android:text="@string/name_author"/>
     </LinearLayout>
-    <ImageButton
+    <ImageView
+        style="@style/playing_title_btn"
         android:id="@+id/btn_add"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_margin="@dimen/_10sdp"
         android:src="@drawable/menu_add"
         android:layout_alignParentEnd="true"/>
 </RelativeLayout>
