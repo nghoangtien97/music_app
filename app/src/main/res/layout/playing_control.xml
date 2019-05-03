@@ -10,7 +10,7 @@
     app:alignContent="center">
     <ImageView
         style="@style/playing_control_btn"
-        android:src="@drawable/playing_shuffle_disable"/>
+        android:src="@drawable/playing_shuffle_enable"/>
     <ImageView
         style="@style/playing_control_btn"
         android:src="@drawable/playing_pre"/>
@@ -18,11 +18,11 @@
         style="@style/playing_control_btn"
         android:layout_height="@dimen/_40sdp"
         android:layout_width="@dimen/_40sdp"
-        android:src="@drawable/playing_enable"/>
+        android:src="@drawable/playing_stop"/>
     <ImageView
         style="@style/playing_control_btn"
         android:src="@drawable/playing_next"/>
     <ImageView
         style="@style/playing_control_btn"
-        android:src="@drawable/playing_repeat_disable"/>
+        android:src="@drawable/playing_repeat_one"/>
 </com.google.android.flexbox.FlexboxLayout>

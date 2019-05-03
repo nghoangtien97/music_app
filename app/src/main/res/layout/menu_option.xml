@@ -15,8 +15,7 @@
         app:flexDirection="column">
         <ImageButton
             style="@style/menu_btn_img"
-            android:src="@drawable/menu_home"
-            />
+            android:src="@drawable/menu_home_enable" />
         <TextView
             style="@style/menu_btn_text"
             android:text="@string/menu_home"/>
@@ -28,8 +27,7 @@
         app:flexDirection="column">
         <ImageButton
             style="@style/menu_btn_img"
-            android:src="@drawable/menu_search"
-            />
+            android:src="@drawable/menu_search" />
         <TextView
             style="@style/menu_btn_text"
             android:text="@string/menu_search"/>
@@ -41,8 +39,7 @@
         app:flexDirection="column">
         <ImageButton
             style="@style/menu_btn_img"
-            android:src="@drawable/menu_add"
-            />
+            android:src="@drawable/menu_add" />
         <TextView
             style="@style/menu_btn_text"
             android:text="@string/menu_add"/>
@@ -54,8 +51,7 @@
         app:flexDirection="column">
         <ImageButton
             style="@style/menu_btn_img"
-            android:src="@drawable/menu_library"
-            />
+            android:src="@drawable/menu_library" />
         <TextView
             style="@style/menu_btn_text"
             android:text="@string/menu_library"/>

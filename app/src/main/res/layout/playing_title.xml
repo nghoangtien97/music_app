@@ -2,12 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp">
 
     <ImageView
         style="@style/playing_title_btn"
         android:id="@+id/btn_back"
-        android:src="@drawable/btn_left"
+        android:src="@drawable/btn_back"
         android:layout_alignParentStart="true"/>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,14 +18,16 @@
         android:layout_centerVertical="true">
         <TextView
             style="@style/text_normal_white"
+            android:id="@+id/name_song"
             android:text="@string/name_song"/>
         <TextView
             style="@style/text_small_gray"
+            android:id="@+id/name_author"
             android:text="@string/name_author"/>
     </LinearLayout>
     <ImageView
         style="@style/playing_title_btn"
         android:id="@+id/btn_add"
-        android:src="@drawable/menu_add"
+        android:src="@drawable/btn_add"
         android:layout_alignParentEnd="true"/>
 </RelativeLayout>
