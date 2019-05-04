@@ -13,25 +13,16 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SignupActivity">
-        </activity>
-
-        <activity android:name=".PlayingActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".PlayingActivity" />
+        <activity android:name=".MenuHomeActivity" android:noHistory="true" />
+        <activity android:name=".MenuSearchActivity" android:noHistory="true" />
+        <activity android:name=".MenuLibraryActivity" android:noHistory="true" />
+        <activity android:name=".MenuUploadActivity" android:noHistory="true" />
     </application>
 
 </manifest>

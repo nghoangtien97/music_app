@@ -13,11 +13,13 @@
     <com.google.android.flexbox.FlexboxLayout
         style="@style/menu_btn_flexbox"
         app:flexDirection="column">
-        <ImageButton
+        <ImageView
             style="@style/menu_btn_img"
-            android:src="@drawable/menu_home_enable" />
+            android:id="@+id/img_home"
+            android:src="@drawable/menu_home" />
         <TextView
             style="@style/menu_btn_text"
+            android:id="@+id/text_home"
             android:text="@string/menu_home"/>
     </com.google.android.flexbox.FlexboxLayout>
 
@@ -25,11 +27,13 @@
     <com.google.android.flexbox.FlexboxLayout
         style="@style/menu_btn_flexbox"
         app:flexDirection="column">
-        <ImageButton
+        <ImageView
             style="@style/menu_btn_img"
+            android:id="@+id/img_search"
             android:src="@drawable/menu_search" />
         <TextView
             style="@style/menu_btn_text"
+            android:id="@+id/text_search"
             android:text="@string/menu_search"/>
     </com.google.android.flexbox.FlexboxLayout>
 
@@ -37,11 +41,13 @@
     <com.google.android.flexbox.FlexboxLayout
         style="@style/menu_btn_flexbox"
         app:flexDirection="column">
-        <ImageButton
+        <ImageView
             style="@style/menu_btn_img"
+            android:id="@+id/img_library"
             android:src="@drawable/menu_library" />
         <TextView
             style="@style/menu_btn_text"
+            android:id="@+id/text_library"
             android:text="@string/menu_library"/>
     </com.google.android.flexbox.FlexboxLayout>
 
@@ -49,11 +55,13 @@
     <com.google.android.flexbox.FlexboxLayout
         style="@style/menu_btn_flexbox"
         app:flexDirection="column">
-        <ImageButton
+        <ImageView
             style="@style/menu_btn_img"
+            android:id="@+id/img_upload"
             android:src="@drawable/menu_upload" />
         <TextView
             style="@style/menu_btn_text"
+            android:id="@+id/text_upload"
             android:text="@string/menu_upload"/>
     </com.google.android.flexbox.FlexboxLayout>
 

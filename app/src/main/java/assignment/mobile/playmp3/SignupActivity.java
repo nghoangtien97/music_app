@@ -10,17 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-//import butterknife.BindView;
-//import butterknife.ButterKnife;
 
 public class SignupActivity extends AppCompatActivity {
-    private static final String TAG = "SignupActivity";
 
-//    @BindView(R.id.input_name) EditText _nameText;
-//    @BindView(R.id.input_email) EditText _emailText;
-//    @BindView(R.id.input_password) EditText _passwordText;
-//    @BindView(R.id.btn_signup) Button _signupButton;
-//    @BindView(R.id.link_login) TextView _loginLink;
+    private static final String TAG = "SignupActivity";
 
     EditText _nameText;
     EditText _emailText;
@@ -32,7 +25,6 @@ public class SignupActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-//        ButterKnife.bind(this);
 
         _nameText = findViewById(R.id.input_name);
         _emailText = findViewById(R.id.input_email);

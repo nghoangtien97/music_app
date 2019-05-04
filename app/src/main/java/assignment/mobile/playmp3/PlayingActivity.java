@@ -1,6 +1,7 @@
 package assignment.mobile.playmp3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
@@ -15,9 +16,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class PlayingActivity extends AppCompatActivity  {
+
+    private Tools tools;
     private boolean is_playing = true;
     private boolean is_shuffled = false;
     private int is_repeated = 0;
+
+    ImageView _img_home;
+    ImageView _img_search;
+    ImageView _img_library;
+    ImageView _img_upload;
+    TextView _text_home;
+    TextView _text_search;
+    TextView _text_library;
+    TextView _text_upload;
 
     ImageView _playing;
     ImageView _playing_shuffle;
@@ -39,6 +51,21 @@ public class PlayingActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
+
+        tools = new Tools(this.getResources());
+        _img_home = findViewById(R.id.img_home);
+        _img_search = findViewById(R.id.img_search);
+        _img_library = findViewById(R.id.img_library);
+        _img_upload = findViewById(R.id.img_upload);
+        _text_home = findViewById(R.id.text_home);
+        _text_search = findViewById(R.id.text_search);
+        _text_library = findViewById(R.id.text_library);
+        _text_upload = findViewById(R.id.text_upload);
+
+        tools.setMenuDisable(_img_home, R.drawable.menu_home, _text_home);
+        tools.setMenuDisable(_img_search, R.drawable.menu_search, _text_search);
+        tools.setMenuDisable(_img_library, R.drawable.menu_library, _text_library);
+        tools.setMenuDisable(_img_upload, R.drawable.menu_upload, _text_upload);
 
         _playing = findViewById(R.id.playing);
         _playing_shuffle = findViewById(R.id.playing_shuffle);
@@ -131,6 +158,26 @@ public class PlayingActivity extends AppCompatActivity  {
         _btn_add.setOnClickListener((View v) -> {
             // TODO: Add current song to library
 
+        });
+
+        _img_home.setOnClickListener((View v) -> {
+            Intent intent = new Intent(getApplicationContext(), MenuHomeActivity.class);
+            startActivity(intent);
+        });
+
+        _img_search.setOnClickListener((View v) -> {
+            Intent intent = new Intent(getApplicationContext(), MenuSearchActivity.class);
+            startActivity(intent);
+        });
+
+        _img_library.setOnClickListener((View v) -> {
+            Intent intent = new Intent(getApplicationContext(), MenuLibraryActivity.class);
+            startActivity(intent);
+        });
+
+        _img_upload.setOnClickListener((View v) -> {
+            Intent intent = new Intent(getApplicationContext(), MenuUploadActivity.class);
+            startActivity(intent);
         });
     }
 
