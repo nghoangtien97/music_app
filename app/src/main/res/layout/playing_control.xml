@@ -21,7 +21,7 @@
         android:id="@+id/playing"
         android:layout_height="@dimen/_40sdp"
         android:layout_width="@dimen/_40sdp"
-        android:src="@drawable/playing_play"/>
+        android:src="@drawable/playing_play_enable"/>
     <ImageView
         style="@style/playing_control_btn"
         android:id="@+id/playing_next"

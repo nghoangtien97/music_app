@@ -8,7 +8,7 @@
     <ImageView
         style="@style/playing_title_btn"
         android:id="@+id/btn_back"
-        android:src="@drawable/btn_back"
+        android:src="@drawable/icon_left"
         android:layout_alignParentStart="true"/>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,6 +28,6 @@
     <ImageView
         style="@style/playing_title_btn"
         android:id="@+id/btn_add"
-        android:src="@drawable/btn_add"
+        android:src="@drawable/icon_add"
         android:layout_alignParentEnd="true"/>
 </RelativeLayout>

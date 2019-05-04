@@ -33,18 +33,6 @@
             android:text="@string/menu_search"/>
     </com.google.android.flexbox.FlexboxLayout>
 
-    <!-- Add Button -->
-    <com.google.android.flexbox.FlexboxLayout
-        style="@style/menu_btn_flexbox"
-        app:flexDirection="column">
-        <ImageButton
-            style="@style/menu_btn_img"
-            android:src="@drawable/menu_add" />
-        <TextView
-            style="@style/menu_btn_text"
-            android:text="@string/menu_add"/>
-    </com.google.android.flexbox.FlexboxLayout>
-
     <!-- Library Button -->
     <com.google.android.flexbox.FlexboxLayout
         style="@style/menu_btn_flexbox"
@@ -55,6 +43,18 @@
         <TextView
             style="@style/menu_btn_text"
             android:text="@string/menu_library"/>
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <!-- Upload Button -->
+    <com.google.android.flexbox.FlexboxLayout
+        style="@style/menu_btn_flexbox"
+        app:flexDirection="column">
+        <ImageButton
+            style="@style/menu_btn_img"
+            android:src="@drawable/menu_upload" />
+        <TextView
+            style="@style/menu_btn_text"
+            android:text="@string/menu_upload"/>
     </com.google.android.flexbox.FlexboxLayout>
 
 </com.google.android.flexbox.FlexboxLayout>
