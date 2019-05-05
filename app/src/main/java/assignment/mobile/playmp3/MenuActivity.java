@@ -39,6 +39,7 @@ public class MenuActivity extends AppCompatActivity {
             R.string.menu_upload
     };
 
+    View _layout_playing;
     View _frag_playing;
     ImageView _playing;
     ImageView _playing_pre;
@@ -58,6 +59,10 @@ public class MenuActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
                 tab.setIcon(tabIconsEnable[position]);
+                // Test if frag_playing display or not.
+                if (position == 3) {
+                    app.toggle_has_played();
+                }
             }
 
             @Override
@@ -112,11 +117,17 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void initPlayingControl() {
+        _layout_playing = findViewById(R.id.layout_playing);
         _frag_playing = findViewById(R.id.frag_playing);
         _playing = findViewById(R.id.playing);
         _playing_pre = findViewById(R.id.playing_pre);
         _playing_next = findViewById(R.id.playing_next);
 
+        if (!app.isHas_played()) {
+            _layout_playing.setVisibility(View.INVISIBLE);
+        } else {
+            _layout_playing.setVisibility(View.VISIBLE);
+        }
         _playing.setImageResource(app.isPlaying()?R.drawable.playing_play_enable:R.drawable.playing_stop_enable);
     }
 
@@ -171,5 +182,10 @@ public class MenuActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         _playing.setImageResource(app.isPlaying()?R.drawable.playing_play_enable:R.drawable.playing_stop_enable);
+        if (!app.isHas_played()) {
+            _layout_playing.setVisibility(View.INVISIBLE);
+        } else {
+            _layout_playing.setVisibility(View.VISIBLE);
+        }
     }
 }

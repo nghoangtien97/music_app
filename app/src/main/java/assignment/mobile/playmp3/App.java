@@ -1,6 +1,7 @@
 package assignment.mobile.playmp3;
 
 import android.app.Activity;
+import android.view.View;
 import android.widget.ImageView;
 
 public class App {
@@ -34,6 +35,16 @@ public class App {
 
     public boolean isShuffle() {
         return shuffle;
+    }
+
+    public void toggle_has_played() {
+        this.has_played = ! this.has_played;
+        View _layout_playing = activity.findViewById(R.id.layout_playing);
+        if (has_played) {
+            _layout_playing.setVisibility(View.VISIBLE);
+        } else {
+            _layout_playing.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void toggle_playing() {
