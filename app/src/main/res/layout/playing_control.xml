@@ -11,7 +11,7 @@
     <ImageView
         style="@style/playing_control_btn"
         android:id="@+id/playing_shuffle"
-        android:src="@drawable/playing_shuffle_enable"/>
+        android:src="@drawable/playing_shuffle"/>
     <ImageView
         style="@style/playing_control_btn"
         android:id="@+id/playing_pre"

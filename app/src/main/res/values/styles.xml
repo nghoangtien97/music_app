@@ -127,6 +127,14 @@
         <item name="android:textSize">@dimen/_10sdp</item>
         <item name="android:color">@color/oil</item>
     </style>
+    <style name="text_small_white" parent="text">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:color">@color/white</item>
+    </style>
+    <style name="text_smaller_gray" parent="text">
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:color">@color/oil</item>
+    </style>
 
     <!-- Button playing title -->
     <style name="playing_title_btn">
@@ -138,6 +146,9 @@
     <style name="playing_control_btn">
         <item name="android:layout_width">@dimen/_20sdp</item>
         <item name="android:layout_height">@dimen/_20sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_5sdp</item>
+        <item name="android:layout_marginRight">@dimen/_5sdp</item>
+        <item name="android:layout_centerVertical">true</item>
     </style>
 
 </resources>

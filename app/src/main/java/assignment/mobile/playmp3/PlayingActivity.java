@@ -16,10 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class PlayingActivity extends AppCompatActivity  {
-
-    private boolean is_playing = true;
-    private boolean is_shuffled = false;
-    private int is_repeated = 0;
+    private App app;
 
     ImageView _playing;
     ImageView _playing_shuffle;
@@ -41,71 +38,50 @@ public class PlayingActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
+        app = new App(this);
 
-        _playing = findViewById(R.id.playing);
-        _playing_shuffle = findViewById(R.id.playing_shuffle);
-        _playing_repeat = findViewById(R.id.playing_repeat);
-        _playing_pre = findViewById(R.id.playing_pre);
-        _playing_next = findViewById(R.id.playing_next);
-        _btn_back = findViewById(R.id.btn_back);
-        _btn_add = findViewById(R.id.btn_add);
-        _name_song = findViewById(R.id.name_song);
-        _name_author = findViewById(R.id.name_author);
-
-        _view_pager = findViewById(R.id.view_pager);
-        _dots_layout = findViewById(R.id.layout_dots);
-        _layouts = new int[]{R.layout.playing_main, R.layout.playing_lyrics};
-        addBottomDots(0);
-        _pager_adapter = new IntroViewPagerAdapter();
-        _view_pager.setAdapter(_pager_adapter);
-        _view_pager.addOnPageChangeListener(mViewPagerChangeListener);
+        initPlayingControl();
+        initPlayingTitle();
+        initPlayingContent();
 
         _playing.setOnClickListener((View v) -> {
-            is_playing = !is_playing;
-            if (is_playing) {
+            app.toggle_playing();
+            if (app.isPlaying()) {
                 // TODO: continue playing song.
 
-                _playing.setImageResource(R.drawable.playing_play_enable);
             } else {
                 // TODO: stop playing.
 
-                _playing.setImageResource(R.drawable.playing_stop_enable);
             }
         });
 
         _playing_shuffle.setOnClickListener((View v) -> {
-            is_shuffled = !is_shuffled;
-            if (is_shuffled) {
+            app.toggle_shuffle();
+            if (app.isShuffle()) {
                 // TODO: random playlist
 
-                _playing_shuffle.setImageResource(R.drawable.playing_shuffle_enable);
             } else {
                 // TODO: disable random
 
-                _playing_shuffle.setImageResource(R.drawable.playing_shuffle);
             }
         });
 
         _playing_repeat.setOnClickListener((View v) -> {
-            // 0: disable, 1: enable (repeat list), 2: repeat one
-            is_repeated = (++is_repeated) % 3;
-            switch (is_repeated) {
+            app.toggle_repeated();
+            switch (app.getRepeated()) {
                 // TODO: disable repeated
                 case 0: {
 
-                    _playing_repeat.setImageResource(R.drawable.playing_repeat);
                     break;
                 }
                 // TODO: repeat all list
                 case 1: {
 
-                    _playing_repeat.setImageResource(R.drawable.playing_repeat_enable);
                     break;
                 }
                 // TODO: repeat current song
                 case 2: {
 
-                    _playing_repeat.setImageResource(R.drawable.playing_repeat_one);
                     break;
                 }
                 default: {
@@ -127,12 +103,12 @@ public class PlayingActivity extends AppCompatActivity  {
 
         _btn_back.setOnClickListener((View v) -> {
             // Back to previous activity
+            setResult(RESULT_CANCELED, new Intent());
             finish();
         });
 
         _btn_add.setOnClickListener((View v) -> {
             // TODO: Add current song to library
-
         });
     }
 
@@ -143,7 +119,40 @@ public class PlayingActivity extends AppCompatActivity  {
 
 
 
+    private void initPlayingControl() {
+        _playing = findViewById(R.id.playing);
+        _playing_shuffle = findViewById(R.id.playing_shuffle);
+        _playing_repeat = findViewById(R.id.playing_repeat);
+        _playing_pre = findViewById(R.id.playing_pre);
+        _playing_next = findViewById(R.id.playing_next);
 
+        _playing.setImageResource(app.isPlaying()?R.drawable.playing_play_enable:R.drawable.playing_stop_enable);
+        _playing_shuffle.setImageResource(app.isShuffle()?R.drawable.playing_shuffle_enable:R.drawable.playing_shuffle);
+        if (app.getRepeated() == 0) {
+            _playing_repeat.setImageResource(R.drawable.playing_repeat);
+        } else if (app.getRepeated() == 1) {
+            _playing_repeat.setImageResource(R.drawable.playing_repeat_enable);
+        } else {
+            _playing_repeat.setImageResource(R.drawable.playing_repeat_one);
+        }
+    }
+
+    private void initPlayingTitle() {
+        _btn_back = findViewById(R.id.btn_back);
+        _btn_add = findViewById(R.id.btn_add);
+        _name_song = findViewById(R.id.name_song);
+        _name_author = findViewById(R.id.name_author);
+    }
+
+    private void initPlayingContent() {
+        _view_pager = findViewById(R.id.view_pager);
+        _dots_layout = findViewById(R.id.layout_dots);
+        _layouts = new int[]{R.layout.playing_main, R.layout.playing_lyrics};
+        addBottomDots(0);
+        _pager_adapter = new IntroViewPagerAdapter();
+        _view_pager.setAdapter(_pager_adapter);
+        _view_pager.addOnPageChangeListener(mViewPagerChangeListener);
+    }
 
     private ViewPager.OnPageChangeListener mViewPagerChangeListener = new ViewPager.OnPageChangeListener() {
         @Override
