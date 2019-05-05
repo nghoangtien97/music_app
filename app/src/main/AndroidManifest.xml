@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Dark">
 
+        <activity android:name=".MenuActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,10 +27,6 @@
         </activity>
         <activity android:name=".SignupActivity" />
         <activity android:name=".PlayingActivity" />
-        <activity android:name=".MenuHomeActivity" android:noHistory="true" />
-        <activity android:name=".MenuSearchActivity" android:noHistory="true" />
-        <activity android:name=".MenuLibraryActivity" android:noHistory="true" />
-        <activity android:name=".MenuUploadActivity" android:noHistory="true" />
     </application>
 
 </manifest>

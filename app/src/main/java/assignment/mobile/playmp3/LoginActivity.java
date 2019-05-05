@@ -88,14 +88,14 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
+        // disable going back to the MenuActivity
         moveTaskToBack(true);
     }
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
 //        finish();
-        Intent intent = new Intent(getApplicationContext(), PlayingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(intent);
     }
 

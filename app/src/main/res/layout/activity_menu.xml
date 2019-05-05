@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main">
+    android:background="@drawable/background_main"
+    android:fitsSystemWindows="true"
+    tools:context=".MenuActivity">
 
-
-    <!-- Main menu -->
-    <include
-        android:id="@+id/menu_option"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/menu_option"
-        android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:theme="@style/AppTheme.Dark.Menu">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/text_tab"
+                app:tabRippleColor="@color/transparent"
+                app:tabPadding="-1dp"
+                app:tabMode="fixed"
+                app:tabGravity="fill">
+            </android.support.design.widget.TabLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/app_layout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </android.support.v4.view.ViewPager>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
